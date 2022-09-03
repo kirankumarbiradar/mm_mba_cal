@@ -23,30 +23,97 @@
 
 <form action="cal.php" method="post" class="row g-3" style="padding-left:5px ;padding-right:5px ;">
 
-  <div class="col-md-4">
-    <label for="validationServer01" class="form-label">Initial Marginal</label>
+    
+    
+    
+     <div class="col-md-4">
+             <label for="validationServer03" class="form-label"> Initial Marginal </label>
+   
+     <span class="input-group-text" id="inputGroupPrepend">
+     <div class="col-md-2">
 
+    <select name="Initial_value_per_amt" class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" >
+      <option selected  value="per_iv">%</option>
+      <option  value="amt_iv">Amt </option>
+    </select>
+  </div>
+       
+
+    <input type="float" class="form-control is-valid" id="validationServer03" aria-describedby="validationServer03Feedback" placeholder="Initial value" name="Initial_value" required>
+    
+    </span>
+   <div>
+        <label class="form-check-label" for="flexSwitchCheckDefault">
+     [ % = % of contract value ]
+    </label></div> 
+  
+
+    
+    </div>
+    
+    
+<!--
+  <div class="col-md-4">
+    <label for="validationServer01" class="form-label">Initial Marginal</label>    
     <input type="float" class="form-control is-valid" id="validationServer01" name="Initial_value" required>
     <div class="valid-feedback">
       Initial Margin amount Required!
       </div>
   </div>
+-->
+    
+    
+    
+    
+    
+    
     <div class="col-md-4">
     <label for="validationServer01" class="form-label"> Maintenance Margin</label>
+        
+<!--
+        <div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="mm_check" value="mm_not_given" >
 
-    <input type="float" class="form-control is-valid" id="validationServer01" name="mm_value" required>
+  <label class="form-check-label" for="flexSwitchCheckDefault">marginal Value Not Given</label>
+
+</div>
+-->
+        
+<span class="input-group-text" id="inputGroupPrepend">
+     <div class="col-md-2">
+
+    <select name="marginal_value_per_amt" class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" >
+      <option selected  value="per_mm">%</option>
+      <option  value="amt_mm">Amt </option>
+    </select>
+  </div>
+    <input type="float" class="form-control is-valid" id="validationServer01" name="mm_value" placeholder="marginal value"  required >
+<!--
     <div class="valid-feedback">
        Maintenance Margin call amount Required!
     </div>
+-->
+    
+        </span>
+        <div>
+        <label class="form-check-label" for="flexSwitchCheckDefault">
+     [ % = % of initial margin ]
+    </label></div>
   </div>
     
 <div class="col-md-4">
-    <label for="validationServer01" class="form-label">Lot Size</label>
+    <label for="validationServer01" class="form-label">Total Lot[contract] Size</label>
 
     <input type="float" class="form-control is-valid" id="validationServer01" name="lotsize_value" required>
-    <div class="valid-feedback">
-       Lot Size Required!
+<!--
+   <div class="valid-feedback">
+       Maintenance Margin call amount Required!
     </div>
+-->
+     <div>
+        <label class="form-check-label" for="flexSwitchCheckDefault">
+     [if additional times given multiple it  example: 50 X 5]
+    </label></div>
   </div>
   
 

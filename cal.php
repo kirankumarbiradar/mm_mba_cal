@@ -17,7 +17,20 @@
 <h1 style align="center">calculation</h1>
 <body>
     <?php
-    echo "Initial Marginal = ".$margin_bal = floatval($_POST['Initial_value'])."::  Maintenance Margin = ".$mm_value = floatval($_POST['mm_value'])."::  Lot Size=".floatval($_POST['lotsize_value']);
+    $itemArr=$_POST['name'];
+    $previ = $itemArr[0];
+    $lot_size = floatval($_POST['lotsize_value']);
+    $margin_bal = floatval($_POST['Initial_value']);
+    $mm_value = floatval($_POST['mm_value']);
+    
+    if ($_POST['Initial_value_per_amt']=="per_iv"){
+                $margin_bal = floatval($previ)*$lot_size*$margin_bal/100;
+            }
+    if ($_POST['marginal_value_per_amt']=="per_mm"){
+                $mm_value = $margin_bal*$mm_value/100;
+            }
+    
+    echo "Initial Marginal = ".$margin_bal ."::  Maintenance Margin = ".$mm_value."::  Lot Size=".floatval($_POST['lotsize_value']);
     ?>
 <div class="bs-example">
     <table class="table">
@@ -34,8 +47,8 @@
         <?php
             echo"
         <thead >
-        <tr>
-                ";
+        <tr>";
+            
             $itemArr=$_POST['name'];
             $no = 0;
             $cum_gain = 0;
@@ -43,7 +56,15 @@
             $lot_size = floatval($_POST['lotsize_value']);
             $margin_bal = floatval($_POST['Initial_value']);
             $mm_value = floatval($_POST['mm_value']);
-            $reset_mbal = $margin_bal;
+            
+            
+             if ($_POST['Initial_value_per_amt']=="per_iv"){
+                $margin_bal = floatval($previ)*$lot_size*$margin_bal/100;
+                 $reset_mbal = $margin_bal;
+            }
+    if ($_POST['marginal_value_per_amt']=="per_mm"){
+                $mm_value = $margin_bal*$mm_value/100;
+            }
             
   foreach($itemArr as $list){
       $no +=1; 
