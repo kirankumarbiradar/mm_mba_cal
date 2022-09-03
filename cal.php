@@ -61,7 +61,9 @@
              if ($_POST['Initial_value_per_amt']=="per_iv"){
                 $margin_bal = floatval($previ)*$lot_size*$margin_bal/100;
                  $reset_mbal = $margin_bal;
-            }
+            }else{
+                 $reset_mbal = $margin_bal;
+             }
     if ($_POST['marginal_value_per_amt']=="per_mm"){
                 $mm_value = $margin_bal*$mm_value/100;
             }
