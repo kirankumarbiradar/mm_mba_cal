@@ -65,6 +65,7 @@
                  $reset_mbal = $margin_bal;
              }
     if ($_POST['marginal_value_per_amt']=="per_mm"){
+        
         if($_POST['method_mm_on']=="con_marg_on"){
             $mm_value = floatval($previ)*$lot_size*$mm_value/100;
         }else{
