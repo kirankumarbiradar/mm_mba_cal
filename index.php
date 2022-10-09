@@ -24,6 +24,16 @@
 <form action="cal.php" method="post" class="row g-3" style="padding-left:5px ;padding-right:5px ;">
 
     
+     <div class="col-md-2">
+    <label for="validationServer04" class="form-label"><br></label><label for="validationServer04" class="form-label"><br></label>
+    <label for="validationServer04" class="form-label">Position Side </label>
+ <span class="input-group-text" id="inputGroupPrepend">
+    <select name="method_position" class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" >
+      <option selected value="long">LONG</option>
+      <option  value="short">SHORT</option>
+    </select>
+   </span>
+  </div>
     
     
      <div class="col-md-4">
@@ -47,10 +57,9 @@
      [ % = % of contract value ]
     </label></div> 
   
-
-    
     </div>
     
+   
     
 <!--
   <div class="col-md-4">
@@ -97,9 +106,28 @@
         </span>
         <div>
         <label class="form-check-label" for="flexSwitchCheckDefault">
-     [ % = % of initial margin ]
+     
     </label></div>
   </div>
+    
+    
+    
+    
+    
+     <!---------------->
+    <div class="col-md-2">
+    <label for="validationServer04" class="form-label"><br></label><label for="validationServer04" class="form-label"><br></label>
+    <label for="validationServer04" class="form-label">Maintenance Margin On [%]</label>
+ <span class="input-group-text" id="inputGroupPrepend">
+    <select name="method_mm_on" class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" >
+      <option selected value="im_marg_on">Initial Margin </option>
+      <option  value="con_marg_on">Contract Value </option>
+    </select>
+   </span>
+  </div>
+    <!------------------>
+    
+    
     
 <div class="col-md-4">
     <label for="validationServer01" class="form-label">Total Lot[contract] Size</label>

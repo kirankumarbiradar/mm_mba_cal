@@ -65,12 +65,22 @@
                  $reset_mbal = $margin_bal;
              }
     if ($_POST['marginal_value_per_amt']=="per_mm"){
-                $mm_value = $margin_bal*$mm_value/100;
+        if($_POST['method_mm_on']=="con_marg_on"){
+            $mm_value = floatval($previ)*$lot_size*$mm_value/100;
+        }else{
+            $mm_value = $margin_bal*$mm_value/100;
+        }
+                
             }
             
   foreach($itemArr as $list){
       $no +=1; 
-      $a =  floatval($list) - $previ ;
+      if ($_POST['method_position']=="long"){
+          $a =  floatval($list) - $previ ;
+      }else{
+          $a =  $previ - floatval($list)  ;
+      }
+      
       $previ = floatval($list);
       $a = $a * $lot_size;
       $cum_gain += $a;
